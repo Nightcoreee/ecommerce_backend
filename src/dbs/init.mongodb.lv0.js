@@ -1,3 +1,4 @@
+'use strict';
 const mongoose = require('mongoose');
 const { errors } = require('web3');
 const connectDB = `mongodb://localhost:27017/api_edu_dev`;

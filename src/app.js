@@ -3,9 +3,12 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 const app = express();
+// const db = require('./dbs/init.mongodb.lv0');
 
 //init db
-require('./dbs/init.mongodb.lv0');
+require('./dbs/init.mongodb');
+const { countConnect } = require('./helpers/check.connect');    
+countConnect();
 //init handle error
 
 //INIT MIDDLEWARES
