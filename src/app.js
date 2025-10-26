@@ -7,8 +7,8 @@ const app = express();
 
 //init db
 require('./dbs/init.mongodb');
-// const { countConnect } = require('./helpers/check.connect');    
-// countConnect();
+const { check_overload } = require('./helpers/check.connect');
+check_overload();
 //init handle error
 
 //INIT MIDDLEWARES
