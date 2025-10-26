@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
 const connectDB = `mongodb://localhost:27017/api_edu_dev`;
-
+const { countConnect } = require('../helpers/check.connect');   
 class Database {
     constructor() {
         this.connect();
@@ -13,7 +13,9 @@ class Database {
             mongoose.set('debug', { color: true });
         }
 
-        mongoose.connect(connectDB).then( _ => console.log('MongoDB connected successfully hihi'))
+        mongoose.connect(connectDB).then( _ => {
+            console.log('MongoDB connected successfully hihi', countConnect());
+        })
         .catch(err => console.log('Connection error: ', err));
     }
 
