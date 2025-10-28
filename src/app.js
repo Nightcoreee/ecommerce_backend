@@ -1,14 +1,22 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 const app = express();
-// const db = require('./dbs/init.mongodb.lv0');
+
+// console.log(`Process::`, process.env);
+
+
 
 //init db
 require('./dbs/init.mongodb');
 const { check_overload } = require('./helpers/check.connect');
-check_overload();
+// check_overload();
+
+
+
+
 //init handle error
 
 //INIT MIDDLEWARES

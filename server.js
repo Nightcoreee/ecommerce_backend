@@ -1,5 +1,6 @@
 const app = require('./src/app.js');
-const port = 3000;
+// truy cập port bên file .env nếu không có thì lấy 3000
+const port = process.env.port || 3000;
 
 
 const server = app.listen(port, () =>{

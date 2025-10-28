@@ -14,7 +14,7 @@ const check_overload = () => {
     setInterval( () => {
         const numConnection = mongoose.connections.length;
         const numCores = os.cpus().length;
-        const memoryUsage = process.memoryUsage().rss;
+        const memoryUsage = process.memoryUsage().rss; //rss (Resident Set Size) là bộ nhớ vật lý đang được sử dụng bởi tiến trình
         const maxConnetion = numCores * 5;
 
         console.log(`Active connections: ${numConnection}`);
@@ -27,4 +27,4 @@ const check_overload = () => {
 }
 module.exports = { 
     countConnect,
-    check_overload};  
+};  
