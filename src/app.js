@@ -28,12 +28,7 @@ app.use(helmet());
 app.use(compression());
 
 //init routes
-app.get('/', (req, res, next) => {
-    const strCompress = "Hello World";
-    res.status(200).json({ 
-        message: 'Hello World',
-    });
-})
+app.use('/', require('./routes/index'));
 
 
 module.exports = app;
