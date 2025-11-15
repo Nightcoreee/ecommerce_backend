@@ -1,3 +1,4 @@
-### signUp
+@url_dev=ttp://localhost:3000/v1/api/
+###signUp
 
-POST http://localhost:3000/v1/api/shop/signUp
+POST {{url_dev}}/shop/signUp
