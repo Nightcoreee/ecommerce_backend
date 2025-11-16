@@ -1,5 +1,6 @@
 const shopModel = require('../models/shop.model')
 const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 const RoleShop = {
     SHOP: 'SHOP',
     WRITTER: 'WRITTER',
@@ -23,7 +24,11 @@ class AccessService {
             })
 
             if (newShop) {
-                
+                // create private key, public key
+                const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
+                    modulusLength: 4096,
+                    })
+                console.log({ privateKey, publicKey})
             }
         } catch (error) {
             return {
